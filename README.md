@@ -1,1 +1,1 @@
-This app will be built out to be a conbination of the crypto tablet app and also display local weather. Updates will be added in soon.
+This app will be built out to be a combination of the crypto tablet app and display local weather. Updates will be added in soon.
