@@ -5,6 +5,7 @@ import "./App.css";
 
 function App() {
     const [isRunning, setIsRunning] = useState(false);
+    const [newSearch, setNewSearch] = useState(false);
 
     /* Currently */
     const [location, setLocation] = useState([]);
@@ -30,7 +31,7 @@ function App() {
     const [day2Low, setDay2Low] = useState([]);
     const [day2, setDay2] = useState([]);
 
-    function CurrentWeather() {
+    const CurrentWeather = () => {
         const zip = document.getElementById("zipcode").value;
 
         axios
@@ -67,16 +68,22 @@ function App() {
             .catch((errors) => {
                 console.error(errors);
             });
-    }
+    };
+
+    const newHandleSearch = () => {
+        setNewSearch(true);
+    };
 
     useEffect(() => {
-        if (isRunning) {
+        if (isRunning || newSearch === true) {
             CurrentWeather();
+            newHandleSearch();
+            setIsRunning(false);
             /* Sets an interval to update the forecast every 30 minutes */
             const interval = setInterval(() => {
                 CurrentWeather();
                 const updateTime = new Date();
-                console.log("Weather data updated at: " + updateTime.getTime());
+                console.log("Weather data updated at: " + updateTime.toLocaleTimeString());
                 /* Forecast will update every 30 minutes */
             }, 1800000);
             return () => clearInterval(interval);
