@@ -72,7 +72,7 @@ function App() {
 
     const CryptoData = () => {
         axios
-            .get("https://api.coingecko.com/api/v3/coins/markets?vs_currency=USD&ids=bitcoin%2C%20ethereum%2C%20iota%2C%20xrp%2C%20litecoin%2C%20dogecoin%2C%20cardano%2C%20monero%2C%20stellar%2C%20nano%2C%20chainlink&order=market_cap_desc&per_page=50&page=1&sparkline=true")
+            .get("https://api.coingecko.com/api/v3/coins/markets?vs_currency=USD&ids=bitcoin%2C%20ethereum%2C%20iota%2C%20&order=market_cap_desc&per_page=50&page=1&sparkline=true")
             .then((response) => {
                 console.log(response.data);
             })
