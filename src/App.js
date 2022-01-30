@@ -70,25 +70,44 @@ function App() {
             });
     };
 
+    const CryptoData = () => {
+        axios
+            .get("https://api.coingecko.com/api/v3/coins/markets?vs_currency=USD&ids=bitcoin%2C%20ethereum%2C%20iota%2C%20xrp%2C%20litecoin%2C%20dogecoin%2C%20cardano%2C%20monero%2C%20stellar%2C%20nano%2C%20chainlink&order=market_cap_desc&per_page=50&page=1&sparkline=true")
+            .then((response) => {
+                console.log(response.data);
+            })
+            .catch((errors) => console.log(errors));
+    };
+
     const newHandleSearch = () => {
         setNewSearch(true);
     };
 
+    /* Pulls weather data on submit and updates every 30 minutes */
     useEffect(() => {
         if (isRunning || newSearch === true) {
             CurrentWeather();
             newHandleSearch();
             setIsRunning(false);
-            /* Sets an interval to update the forecast every 30 minutes */
             const interval = setInterval(() => {
                 CurrentWeather();
                 const updateTime = new Date();
                 console.log("Weather data updated at: " + updateTime.toLocaleTimeString());
-                /* Forecast will update every 30 minutes */
             }, 1800000);
             return () => clearInterval(interval);
         }
     }, [isRunning]);
+
+    /* Pulls crypto data on load and updates every 10 seconds */
+    useEffect(() => {
+        CryptoData();
+        const interval = setInterval(() => {
+            CryptoData();
+            const updateTime = new Date();
+            console.log("Crypto data updated at: " + updateTime.toLocaleTimeString());
+        }, 10000);
+        return () => clearInterval(interval);
+    }, []);
 
     return (
         <div className="App">
