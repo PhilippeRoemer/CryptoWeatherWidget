@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/CryptoWeatherWidget/static/css/main.438bdde9.css",
-    "main.js": "/CryptoWeatherWidget/static/js/main.292f272b.js",
+    "main.js": "/CryptoWeatherWidget/static/js/main.d43cc7e4.js",
     "index.html": "/CryptoWeatherWidget/index.html",
     "main.438bdde9.css.map": "/CryptoWeatherWidget/static/css/main.438bdde9.css.map",
-    "main.292f272b.js.map": "/CryptoWeatherWidget/static/js/main.292f272b.js.map"
+    "main.d43cc7e4.js.map": "/CryptoWeatherWidget/static/js/main.d43cc7e4.js.map"
   },
   "entrypoints": [
     "static/css/main.438bdde9.css",
-    "static/js/main.292f272b.js"
+    "static/js/main.d43cc7e4.js"
   ]
 }
