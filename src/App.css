@@ -15,3 +15,32 @@ td,
 th {
     font-family: "Titillium Web", sans-serif;
 }
+
+.weatherContainer {
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+    text-align: center;
+}
+
+.cryptoContainer {
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+    text-align: center;
+}
+
+.align {
+    display: flex;
+    align-content: flex-start;
+}
+
+.currentTemp {
+    font-size: 55px;
+}
+
+.highTemp {
+    font-weight: bold;
+}

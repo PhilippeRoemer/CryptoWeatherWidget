@@ -7,9 +7,9 @@ const Crypto = () => {
     const CryptoData = () => {
         axios
             .get("https://api.coingecko.com/api/v3/coins/markets?vs_currency=USD&ids=bitcoin%2C%20ethereum%2C%20iota%2C%20&order=market_cap_desc&per_page=50&page=1&sparkline=true")
-            .then((response) => {
-                setCoins(response.data);
-                console.log(response.data);
+            .then((res) => {
+                setCoins(res.data);
+                console.log(res.data);
             })
             .catch((errors) => console.log(errors));
     };
@@ -26,7 +26,7 @@ const Crypto = () => {
     }, []);
     return (
         <div>
-            <div className="forecastContainer">
+            <div className="cryptoContainer">
                 {/*  <img src={cryptoLogo} /> */}
                 {coins.map((post) => (
                     <div>

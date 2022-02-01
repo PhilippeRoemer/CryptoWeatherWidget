@@ -29,6 +29,10 @@ const Weather = () => {
     const [day2Low, setDay2Low] = useState([]);
     const [day2, setDay2] = useState([]);
 
+    /* Sunrise and Sunset */
+    const [sunrise, setSunrise] = useState([]);
+    const [sunset, setSunset] = useState([]);
+
     const CurrentWeather = () => {
         const zip = document.getElementById("zipcode").value;
 
@@ -62,6 +66,10 @@ const Weather = () => {
                 setDay2ConditionIcon(res.data.forecast.forecastday[2].day.condition.icon);
                 setDay2High(Math.trunc(res.data.forecast.forecastday[2].day.maxtemp_f));
                 setDay2Low(Math.trunc(res.data.forecast.forecastday[2].day.mintemp_f));
+
+                /* Sunrise and Sunset */
+                setSunrise(res.data.forecast.forecastday[0].astro.sunrise);
+                setSunset(res.data.forecast.forecastday[0].astro.sunset);
             })
             .catch((errors) => {
                 console.error(errors);
@@ -84,7 +92,7 @@ const Weather = () => {
             }, 1800000);
             return () => clearInterval(interval);
         }
-    }, [isRunning]);
+    }, [isRunning, newSearch]);
     return (
         <div>
             <h1>Weather API</h1>
@@ -93,7 +101,7 @@ const Weather = () => {
             <h1>
                 Forecast for {location}, {region}
             </h1>
-            <div className="forecastContainer">
+            <div className="weatherContainer">
                 {/* Currently */}
                 <div>
                     <h3>Currently</h3>
@@ -109,7 +117,7 @@ const Weather = () => {
                     <h3>Today</h3>
                     <img src={day0ConditionIcon} />
                     <p>
-                        {day0High}&#176; | {day0Low}&#176;
+                        <span className="highTemp">{day0High}&#176;</span> | {day0Low}&#176;
                     </p>
                 </div>
 
@@ -118,7 +126,7 @@ const Weather = () => {
                     <h3>{day1}</h3>
                     <img src={day1ConditionIcon} />
                     <p>
-                        {day1High}&#176; | {day1Low}&#176;
+                        <span className="highTemp">{day1High}&#176;</span> | {day1Low}&#176;
                     </p>
                 </div>
 
@@ -127,8 +135,17 @@ const Weather = () => {
                     <h3>{day2}</h3>
                     <img src={day2ConditionIcon} />
                     <p>
-                        {day2High}&#176; | {day2Low}&#176;
+                        <span className="highTemp">{day2High}&#176;</span> | {day2Low}&#176;
                     </p>
+                </div>
+
+                {/* Sunrise and Sunset */}
+                <div>
+                    <h3>Sunrise</h3>
+                    <p>{sunrise}</p>
+                    <br />
+                    <h3>Sunset</h3>
+                    <p>{sunset}</p>
                 </div>
             </div>
         </div>
