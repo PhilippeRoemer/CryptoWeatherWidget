@@ -16,6 +16,14 @@ th {
     font-family: "Titillium Web", sans-serif;
 }
 
+.headerContainer {
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+    text-align: center;
+}
+
 .weatherContainer {
     display: flex;
     align-items: flex-start;
