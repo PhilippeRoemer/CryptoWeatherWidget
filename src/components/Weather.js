@@ -93,18 +93,19 @@ const Weather = () => {
             return () => clearInterval(interval);
         }
     }, [isRunning, newSearch]);
+
     return (
         <div>
             {location === null ? (
-                <div>
+                <div className="zipCodeContainer">
                     <input type="text" size="15" maxLength="5" id="zipcode" placeholder="Enter ZIP Code"></input>
                     <button onClick={() => setIsRunning(true)}>Submit</button>{" "}
                 </div>
             ) : (
                 <div>
-                    <h1>
+                    <h3 className="location">
                         Forecast for {location}, {region}
-                    </h1>
+                    </h3>
                     <div className="weatherContainer">
                         {/* Currently */}
                         <div>

@@ -29,6 +29,11 @@ div {
     text-align: center;
 }
 
+.zipCodeContainer {
+    display: flex;
+    justify-content: center;
+}
+
 .weatherContainer {
     display: flex;
     align-items: flex-start;
@@ -51,11 +56,16 @@ div {
 }
 
 .time {
-    font-size: 10rem;
+    font-size: 6rem;
 }
 
 .date {
-    margin-bottom: 2rem;
+    margin-bottom: 1.2rem;
+}
+
+.location {
+    margin-left: 5%;
+    margin-bottom: 1rem;
 }
 
 .currentTemp {
@@ -64,4 +74,57 @@ div {
 
 .highTemp {
     font-weight: bold;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+th {
+    font-size: 20px;
+}
+
+td {
+    text-align: center;
+}
+
+tr {
+    height: 1vh;
+}
+
+tr:nth-child(even) {
+    background: #45a29d1e;
+}
+
+.coin-img {
+    height: 30px;
+    width: 30px;
+}
+
+.red {
+    color: #da0000;
+}
+
+.redBold {
+    color: #ff0000;
+    font-weight: bold;
+}
+
+.green {
+    color: #0fc90f;
+}
+
+.greenBold {
+    color: #00ff00;
+    font-weight: bold;
+}
+
+.ATHincoming {
+    color: #f7ff00;
+    font-weight: bold;
+}
+
+.sparklineGraph {
+    width: 150px;
+    height: 50px;
 }
