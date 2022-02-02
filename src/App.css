@@ -21,6 +21,11 @@ div {
     font-family: "Titillium Web", sans-serif;
 }
 
+body {
+    background-color: #0b0c10;
+    color: #c5c6c7;
+}
+
 .headerContainer {
     display: flex;
     align-items: flex-end;
