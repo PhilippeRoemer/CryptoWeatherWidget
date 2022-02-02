@@ -3,6 +3,10 @@
     padding: 0;
 }
 
+html {
+    font-size: 100%;
+}
+
 h1,
 h2,
 h3,
@@ -12,13 +16,14 @@ h6,
 p,
 a,
 td,
-th {
+th,
+div {
     font-family: "Titillium Web", sans-serif;
 }
 
 .headerContainer {
     display: flex;
-    align-items: flex-start;
+    align-items: flex-end;
     flex-wrap: nowrap;
     justify-content: space-evenly;
     text-align: center;
@@ -43,6 +48,14 @@ th {
 .align {
     display: flex;
     align-content: flex-start;
+}
+
+.time {
+    font-size: 10rem;
+}
+
+.date {
+    margin-bottom: 2rem;
 }
 
 .currentTemp {

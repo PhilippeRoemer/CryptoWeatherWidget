@@ -6,7 +6,7 @@ const Weather = () => {
     const [newSearch, setNewSearch] = useState(false);
 
     /* Currently */
-    const [location, setLocation] = useState([]);
+    const [location, setLocation] = useState(null);
     const [region, setRegion] = useState([]);
     const [currentTemp, setCurrentTemp] = useState([]);
     const [currentCondition, setCurrentCondition] = useState([]);
@@ -95,59 +95,65 @@ const Weather = () => {
     }, [isRunning, newSearch]);
     return (
         <div>
-            <h1>Weather API</h1>
-            <input type="text" size="15" maxLength="5" id="zipcode"></input>
-            <button onClick={() => setIsRunning(true)}>Submit</button>
-            <h1>
-                Forecast for {location}, {region}
-            </h1>
-            <div className="weatherContainer">
-                {/* Currently */}
+            {location === null ? (
                 <div>
-                    <h3>Currently</h3>
-                    <div className="align">
-                        <p className="currentTemp">{currentTemp}&#176;</p>
-                        <img src={currentConditionIcon} />
+                    <input type="text" size="15" maxLength="5" id="zipcode" placeholder="Enter ZIP Code"></input>
+                    <button onClick={() => setIsRunning(true)}>Submit</button>{" "}
+                </div>
+            ) : (
+                <div>
+                    <h1>
+                        Forecast for {location}, {region}
+                    </h1>
+                    <div className="weatherContainer">
+                        {/* Currently */}
+                        <div>
+                            <h3>Currently</h3>
+                            <div className="align">
+                                <p className="currentTemp">{currentTemp}&#176;</p>
+                                <img src={currentConditionIcon} />
+                            </div>
+                            <p>{currentCondition}</p>
+                        </div>
+
+                        {/* Today */}
+                        <div>
+                            <h3>Today</h3>
+                            <img src={day0ConditionIcon} />
+                            <p>
+                                <span className="highTemp">{day0High}&#176;</span> | {day0Low}&#176;
+                            </p>
+                        </div>
+
+                        {/* Tomorrow */}
+                        <div>
+                            <h3>{day1}</h3>
+                            <img src={day1ConditionIcon} />
+                            <p>
+                                <span className="highTemp">{day1High}&#176;</span> | {day1Low}&#176;
+                            </p>
+                        </div>
+
+                        {/* After Tomorrow */}
+                        <div>
+                            <h3>{day2}</h3>
+                            <img src={day2ConditionIcon} />
+                            <p>
+                                <span className="highTemp">{day2High}&#176;</span> | {day2Low}&#176;
+                            </p>
+                        </div>
+
+                        {/* Sunrise and Sunset */}
+                        <div>
+                            <h3>Sunrise</h3>
+                            <p>{sunrise}</p>
+                            <br />
+                            <h3>Sunset</h3>
+                            <p>{sunset}</p>
+                        </div>
                     </div>
-                    <p>{currentCondition}</p>
                 </div>
-
-                {/* Today */}
-                <div>
-                    <h3>Today</h3>
-                    <img src={day0ConditionIcon} />
-                    <p>
-                        <span className="highTemp">{day0High}&#176;</span> | {day0Low}&#176;
-                    </p>
-                </div>
-
-                {/* Tomorrow */}
-                <div>
-                    <h3>{day1}</h3>
-                    <img src={day1ConditionIcon} />
-                    <p>
-                        <span className="highTemp">{day1High}&#176;</span> | {day1Low}&#176;
-                    </p>
-                </div>
-
-                {/* After Tomorrow */}
-                <div>
-                    <h3>{day2}</h3>
-                    <img src={day2ConditionIcon} />
-                    <p>
-                        <span className="highTemp">{day2High}&#176;</span> | {day2Low}&#176;
-                    </p>
-                </div>
-
-                {/* Sunrise and Sunset */}
-                <div>
-                    <h3>Sunrise</h3>
-                    <p>{sunrise}</p>
-                    <br />
-                    <h3>Sunset</h3>
-                    <p>{sunset}</p>
-                </div>
-            </div>
+            )}
         </div>
     );
 };

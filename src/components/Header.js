@@ -26,8 +26,8 @@ const Header = () => {
 
     return (
         <div className="headerContainer">
-            <h3>{currentTime}</h3>
-            <h3>{currentDate}</h3>
+            <h1 className="time">{currentTime}</h1>
+            <h3 className="date">{currentDate}</h3>
         </div>
     );
 };
