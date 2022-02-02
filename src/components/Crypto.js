@@ -7,7 +7,7 @@ const Crypto = () => {
 
     const CryptoData = () => {
         axios
-            .get("https://api.coingecko.com/api/v3/coins/markets?vs_currency=USD&ids=bitcoin%2C%20ethereum%2C%20iota%2C%20&order=market_cap_desc&per_page=50&page=1&sparkline=true&price_change_percentage=1h%2C24h%2C7d")
+            .get("https://api.coingecko.com/api/v3/coins/markets?vs_currency=USD&ids=bitcoin%2C%20ethereum%2C%20iota%2C%20cardano&order=market_cap_desc&per_page=50&page=1&sparkline=true&price_change_percentage=1h%2C24h%2C7d")
             .then((res) => {
                 setCoins(res.data);
                 console.log(res.data);
@@ -26,7 +26,7 @@ const Crypto = () => {
         return () => clearInterval(interval);
     }, []);
     return (
-        <div>
+        <div className="cryptoContainer">
             <table>
                 <tr>
                     <th></th>
@@ -40,6 +40,7 @@ const Crypto = () => {
                     <th>7d Chart</th>
                 </tr>
                 {coins.map((post) => {
+                    const rank = post.market_cap_rank;
                     const name = post.name;
                     const price = post.current_price;
                     const marketcap = post.market_cap;
@@ -57,6 +58,7 @@ const Crypto = () => {
                             </td>
                             <td>
                                 <h3>{name}</h3>
+                                <sub>Rank: {rank}</sub>
                             </td>
                             <td>{price > ath ? <p className="ATHincoming">${price.toFixed(2).replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,")}</p> : <p>${price.toFixed(2).replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,")}</p>}</td>
                             <td>
@@ -95,9 +97,7 @@ const Crypto = () => {
                             <td>${ath.toLocaleString()}</td>
                             <td>${marketcap.toLocaleString()}</td>
                             <td className="sparklineGraph">
-                                <Sparklines data={chart}>
-                                    <SparklinesLine color="#66fcf1" />
-                                </Sparklines>
+                                <Sparklines data={chart}>{priceChange_7d < 0 ? <SparklinesLine color="#ea3943" /> : <SparklinesLine color="#16c784" />}</Sparklines>
                             </td>
                         </tr>
                     );

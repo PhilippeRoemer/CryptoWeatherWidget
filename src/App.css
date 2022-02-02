@@ -32,6 +32,7 @@ div {
 .zipCodeContainer {
     display: flex;
     justify-content: center;
+    padding: 40px;
 }
 
 .weatherContainer {
@@ -43,11 +44,7 @@ div {
 }
 
 .cryptoContainer {
-    display: flex;
-    align-items: flex-start;
-    flex-wrap: nowrap;
-    justify-content: space-evenly;
-    text-align: center;
+    margin-top: 30px;
 }
 
 .align {
@@ -99,23 +96,24 @@ tr:nth-child(even) {
 .coin-img {
     height: 30px;
     width: 30px;
+    padding-left: 20px;
 }
 
 .red {
-    color: #da0000;
+    color: #ea3943;
 }
 
 .redBold {
-    color: #ff0000;
+    color: #ea3943;
     font-weight: bold;
 }
 
 .green {
-    color: #0fc90f;
+    color: #16c784;
 }
 
 .greenBold {
-    color: #00ff00;
+    color: #16c784;
     font-weight: bold;
 }
 
@@ -127,4 +125,5 @@ tr:nth-child(even) {
 .sparklineGraph {
     width: 150px;
     height: 50px;
+    padding-right: 20px;
 }
