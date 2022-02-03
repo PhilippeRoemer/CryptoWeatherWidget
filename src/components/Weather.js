@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import RainIcon from "../RainIcon.png";
 import axios from "axios";
 
 const Weather = () => {
@@ -14,17 +15,20 @@ const Weather = () => {
 
     /* Today */
     const [day0ConditionIcon, setDay0ConditionIcon] = useState([]);
+    const [day0Rain, setDay0Rain] = useState([]);
     const [day0High, setDay0High] = useState([]);
     const [day0Low, setDay0Low] = useState([]);
 
     /* Tomorrow */
     const [day1ConditionIcon, setDay1ConditionIcon] = useState([]);
+    const [day1Rain, setDay1Rain] = useState([]);
     const [day1High, setDay1High] = useState([]);
     const [day1Low, setDay1Low] = useState([]);
     const [day1, setDay1] = useState([]);
 
     /* After Tomorrow */
     const [day2ConditionIcon, setDay2ConditionIcon] = useState([]);
+    const [day2Rain, setDay2Rain] = useState([]);
     const [day2High, setDay2High] = useState([]);
     const [day2Low, setDay2Low] = useState([]);
     const [day2, setDay2] = useState([]);
@@ -50,6 +54,7 @@ const Weather = () => {
                 setDay0ConditionIcon(res.data.forecast.forecastday[0].day.condition.icon);
                 setDay0High(Math.trunc(res.data.forecast.forecastday[0].day.maxtemp_f));
                 setDay0Low(Math.trunc(res.data.forecast.forecastday[0].day.mintemp_f));
+                setDay0Rain(res.data.forecast.forecastday[0].day.daily_chance_of_rain);
 
                 /* Tomorrow's Weather */
                 const day1 = new Date();
@@ -58,6 +63,7 @@ const Weather = () => {
                 setDay1ConditionIcon(res.data.forecast.forecastday[1].day.condition.icon);
                 setDay1High(Math.trunc(res.data.forecast.forecastday[1].day.maxtemp_f));
                 setDay1Low(Math.trunc(res.data.forecast.forecastday[1].day.mintemp_f));
+                setDay1Rain(res.data.forecast.forecastday[1].day.daily_chance_of_rain);
 
                 /* After Tomorrow's Weather */
                 const day2 = new Date();
@@ -66,6 +72,7 @@ const Weather = () => {
                 setDay2ConditionIcon(res.data.forecast.forecastday[2].day.condition.icon);
                 setDay2High(Math.trunc(res.data.forecast.forecastday[2].day.maxtemp_f));
                 setDay2Low(Math.trunc(res.data.forecast.forecastday[2].day.mintemp_f));
+                setDay2Rain(res.data.forecast.forecastday[2].day.daily_chance_of_rain);
 
                 /* Sunrise and Sunset */
                 setSunrise(res.data.forecast.forecastday[0].astro.sunrise);
@@ -124,6 +131,10 @@ const Weather = () => {
                             <p>
                                 <span className="highTemp">{day0High}&#176;</span> | {day0Low}&#176;
                             </p>
+                            <div className="rainChance">
+                                <img src={RainIcon} className="rainIcon" />
+                                <p>{day0Rain}%</p>
+                            </div>
                         </div>
 
                         {/* Tomorrow */}
@@ -133,6 +144,10 @@ const Weather = () => {
                             <p>
                                 <span className="highTemp">{day1High}&#176;</span> | {day1Low}&#176;
                             </p>
+                            <div className="rainChance">
+                                <img src={RainIcon} className="rainIcon" />
+                                <p>{day1Rain}%</p>
+                            </div>
                         </div>
 
                         {/* After Tomorrow */}
@@ -142,6 +157,10 @@ const Weather = () => {
                             <p>
                                 <span className="highTemp">{day2High}&#176;</span> | {day2Low}&#176;
                             </p>
+                            <div className="rainChance">
+                                <img src={RainIcon} className="rainIcon" />
+                                <p>{day2Rain}%</p>
+                            </div>
                         </div>
 
                         {/* Sunrise and Sunset */}

@@ -78,6 +78,16 @@ body {
     font-weight: bold;
 }
 
+.rainIcon {
+    height: 15px;
+}
+
+.rainChance {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 7px;
+}
+
 table {
     border-collapse: collapse;
     width: 100%;
