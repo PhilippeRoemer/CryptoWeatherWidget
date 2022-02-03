@@ -5,6 +5,7 @@ import axios from "axios";
 const Weather = () => {
     const [isRunning, setIsRunning] = useState(false);
     const [newSearch, setNewSearch] = useState(false);
+    const [forecastUpdate, setForecastUpdate] = useState(null);
 
     /* Currently */
     const [location, setLocation] = useState(null);
@@ -77,6 +78,10 @@ const Weather = () => {
                 /* Sunrise and Sunset */
                 setSunrise(res.data.forecast.forecastday[0].astro.sunrise);
                 setSunset(res.data.forecast.forecastday[0].astro.sunset);
+
+                /* Updated */
+                const updateTime = new Date();
+                setForecastUpdate("Weather Updated at: " + updateTime.toLocaleTimeString("en-US", { hour: "numeric", minute: "numeric", hour12: true }));
             })
             .catch((errors) => {
                 console.error(errors);
@@ -94,8 +99,8 @@ const Weather = () => {
             setIsRunning(false);
             const interval = setInterval(() => {
                 CurrentWeather();
-                const updateTime = new Date();
-                console.log("Weather data updated at: " + updateTime.toLocaleTimeString());
+                /*               const updateTime = new Date();
+                console.log("Weather data updated at: " + updateTime.toLocaleTimeString()); */
             }, 1800000);
             return () => clearInterval(interval);
         }
@@ -170,6 +175,8 @@ const Weather = () => {
                             <br />
                             <h3>Sunset</h3>
                             <p>{sunset}</p>
+                            <br />
+                            <p className="weatherUpdate">{forecastUpdate}</p>
                         </div>
                     </div>
                 </div>
