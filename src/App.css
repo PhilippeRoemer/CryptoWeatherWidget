@@ -61,6 +61,10 @@ body {
     font-size: 6rem;
 }
 
+.hideDiv {
+    display: none;
+}
+
 .date {
     margin-bottom: 1.2rem;
 }
