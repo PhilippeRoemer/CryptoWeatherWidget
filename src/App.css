@@ -24,6 +24,8 @@ div {
 body {
     background-color: #0b0c10;
     color: #c5c6c7;
+    max-width: 930px;
+    margin: auto;
 }
 
 .headerContainer {
