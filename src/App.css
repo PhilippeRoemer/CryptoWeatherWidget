@@ -35,9 +35,8 @@ body {
 }
 
 .zipCodeContainer {
-    display: flex;
-    justify-content: center;
-    padding: 40px;
+    text-align: center;
+    padding: 20px;
 }
 
 .weatherContainer {
@@ -61,12 +60,28 @@ body {
     font-size: 6rem;
 }
 
+.date {
+    margin-bottom: 1.2rem;
+}
+
 .hideDiv {
     display: none;
 }
 
-.date {
-    margin-bottom: 1.2rem;
+.zipInput {
+    text-align: center;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 1rem;
+    margin-right: 0.3rem;
+}
+
+.zipSubmit {
+    padding: 20px;
+    font-size: 1rem;
+    font-weight: bold;
 }
 
 .location {
@@ -149,4 +164,33 @@ tr:nth-child(even) {
     width: 150px;
     height: 50px;
     padding-right: 20px;
+}
+
+.loadingRing {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80px;
+    height: 80px;
+}
+
+.loadingRing:after {
+    content: " ";
+    display: block;
+    width: 64px;
+    height: 64px;
+    margin: 8px;
+    border-radius: 50%;
+    border: 6px solid #fff;
+    border-color: #fff transparent #fff transparent;
+    animation: lds-dual-ring 1.2s linear infinite;
+}
+
+@keyframes lds-dual-ring {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
 }

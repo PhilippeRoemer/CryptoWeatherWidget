@@ -99,8 +99,6 @@ const Weather = () => {
             setIsRunning(false);
             const interval = setInterval(() => {
                 CurrentWeather();
-                /*               const updateTime = new Date();
-                console.log("Weather data updated at: " + updateTime.toLocaleTimeString()); */
             }, 1800000);
             return () => clearInterval(interval);
         }
@@ -109,8 +107,12 @@ const Weather = () => {
     return (
         <div>
             <div className={location === null ? "zipCodeContainer" : "hideDiv"}>
-                <input type="text" size="15" maxLength="5" id="zipcode" placeholder="Enter ZIP Code"></input>
-                <button onClick={() => setIsRunning(true)}>Submit</button>{" "}
+                <h2>Local Forecast</h2>
+                <br />
+                <input type="text" size="15" maxLength="5" id="zipcode" placeholder="Enter ZIP Code" className="zipInput"></input>
+                <button onClick={() => setIsRunning(true)} className="zipSubmit">
+                    Submit
+                </button>
             </div>
 
             <div>
