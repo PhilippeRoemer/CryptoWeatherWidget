@@ -6,24 +6,47 @@ const Crypto = () => {
     const [coins, setCoins] = useState([]);
 
     const CryptoData = () => {
+        var txt = "";
+        var checkboxes = document.querySelectorAll('input[type="checkbox"]:checked');
+        for (var checkbox of checkboxes) {
+            txt = txt + checkbox.value;
+        }
+
+        const selectedCoins = txt;
+
         axios
-            .get("https://api.coingecko.com/api/v3/coins/markets?vs_currency=USD&ids=bitcoin%2C%20ethereum%2C%20iota%2C%20cardano&order=market_cap_desc&per_page=50&page=1&sparkline=true&price_change_percentage=1h%2C24h%2C7d")
+            .get("https://api.coingecko.com/api/v3/coins/markets?vs_currency=USD&ids=" + selectedCoins + "order=market_cap_desc&per_page=50&page=1&sparkline=true&price_change_percentage=1h%2C24h%2C7d")
             .then((res) => {
                 setCoins(res.data);
             })
             .catch((errors) => console.log(errors));
     };
 
-    /* Pulls crypto data on load and updates every 10 seconds */
-    useEffect(() => {
-        CryptoData();
-        const interval = setInterval(() => {
-            CryptoData();
-        }, 10000);
-        return () => clearInterval(interval);
-    }, []);
     return (
         <div className="cryptoContainer">
+            <div>
+                <input class="coinCheckbox" type="checkbox" value="bitcoin%2C%20"></input>
+                <label>Bitcoin</label>
+            </div>
+            <div>
+                <input class="coinCheckbox" type="checkbox" value="ethereum%2C%20"></input>
+                <label>Ethereum</label>
+            </div>
+            <div>
+                <input class="coinCheckbox" type="checkbox" value="cardano%2C%20"></input>
+                <label>Cardano</label>
+            </div>
+            <div>
+                <input class="coinCheckbox" type="checkbox" value="iota%2C%20"></input>
+                <label>IOTA</label>
+            </div>
+
+            <div>
+                <button type="submit" onClick={CryptoData}>
+                    Submit
+                </button>
+            </div>
+
             {coins.length > 0 ? (
                 <table>
                     <tr>
