@@ -37,10 +37,85 @@ const Crypto = () => {
                 <label>Cardano</label>
             </div>
             <div>
+                <input class="coinCheckbox" type="checkbox" value="solana%2C%20"></input>
+                <label>Solana</label>
+            </div>
+            <div>
                 <input class="coinCheckbox" type="checkbox" value="iota%2C%20"></input>
                 <label>IOTA</label>
             </div>
-
+            <div>
+                <input class="coinCheckbox" type="checkbox" value="ripple%2C%20"></input>
+                <label>XRP</label>
+            </div>
+            <div>
+                <input class="coinCheckbox" type="checkbox" value="polkadot%2C%20"></input>
+                <label>Polkadot</label>
+            </div>
+            <div>
+                <input class="coinCheckbox" type="checkbox" value="dogecoin%2C%20"></input>
+                <label>Dogecoin</label>
+            </div>
+            <div>
+                <input class="coinCheckbox" type="checkbox" value="avalanche-2%2C%20"></input>
+                <label>Avalanche</label>
+            </div>
+            <div>
+                <input class="coinCheckbox" type="checkbox" value="shiba-inu%2C%20"></input>
+                <label>Shiba Inu</label>
+            </div>
+            <div>
+                <input class="coinCheckbox" type="checkbox" value="cosmos%2C%20"></input>
+                <label>Cosmos</label>
+            </div>
+            <div>
+                <input class="coinCheckbox" type="checkbox" value="litecoin%2C%20"></input>
+                <label>Litecoin</label>
+            </div>
+            <div>
+                <input class="coinCheckbox" type="checkbox" value="chainlink%2C%20"></input>
+                <label>Chainlink</label>
+            </div>
+            <div>
+                <input class="coinCheckbox" type="checkbox" value="uniswap%2C%20"></input>
+                <label>Uniswap</label>
+            </div>
+            <div>
+                <input class="coinCheckbox" type="checkbox" value="tron%2C%20"></input>
+                <label>Tron</label>
+            </div>
+            <div>
+                <input class="coinCheckbox" type="checkbox" value="algorand%2C%20"></input>
+                <label>Algorand</label>
+            </div>
+            <div>
+                <input class="coinCheckbox" type="checkbox" value="stellar%2C%20"></input>
+                <label>Stellar</label>
+            </div>
+            <div>
+                <input class="coinCheckbox" type="checkbox" value="hedera-hashgraph%2C%20"></input>
+                <label>Hedera</label>
+            </div>
+            <div>
+                <input class="coinCheckbox" type="checkbox" value="vechain%2C%20"></input>
+                <label>VeChain</label>
+            </div>
+            <div>
+                <input class="coinCheckbox" type="checkbox" value="elrond-erd-2%2C%20"></input>
+                <label>Elrond</label>
+            </div>
+            <div>
+                <input class="coinCheckbox" type="checkbox" value="monero%2C%20"></input>
+                <label>Monero</label>
+            </div>
+            <div>
+                <input class="coinCheckbox" type="checkbox" value="loopring%2C%20"></input>
+                <label>Loopring</label>
+            </div>
+            <div>
+                <input class="coinCheckbox" type="checkbox" value="nano%2C%20"></input>
+                <label>Nano</label>
+            </div>
             <div>
                 <button type="submit" onClick={CryptoData}>
                     Submit
