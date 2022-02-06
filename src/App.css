@@ -133,6 +133,11 @@ tr:nth-child(even) {
     background: #45a29d1e;
 }
 
+.coin-list-img {
+    height: 30px;
+    width: 30px;
+}
+
 .coin-img {
     height: 30px;
     width: 30px;

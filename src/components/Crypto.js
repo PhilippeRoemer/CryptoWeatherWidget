@@ -26,95 +26,164 @@ const Crypto = () => {
         <div className="cryptoContainer">
             <div>
                 <input class="coinCheckbox" type="checkbox" value="bitcoin%2C%20"></input>
-                <label>Bitcoin</label>
+                <label>
+                    Bitcoin
+                    <img className="coin-list-img" src="https://assets.coingecko.com/coins/images/1/large/bitcoin.png?1547033579" />
+                </label>
             </div>
             <div>
                 <input class="coinCheckbox" type="checkbox" value="ethereum%2C%20"></input>
-                <label>Ethereum</label>
+                <label>
+                    Ethereum
+                    <img className="coin-list-img" src="https://assets.coingecko.com/coins/images/279/large/ethereum.png?1595348880" />
+                </label>
             </div>
             <div>
                 <input class="coinCheckbox" type="checkbox" value="cardano%2C%20"></input>
-                <label>Cardano</label>
+                <label>
+                    Cardano
+                    <img className="coin-list-img" src="https://assets.coingecko.com/coins/images/975/large/cardano.png?1547034860" />
+                </label>
             </div>
             <div>
                 <input class="coinCheckbox" type="checkbox" value="solana%2C%20"></input>
-                <label>Solana</label>
+                <label>
+                    Solana
+                    <img className="coin-list-img" src="https://assets.coingecko.com/coins/images/4128/large/solana.png?1640133422" />
+                </label>
             </div>
             <div>
                 <input class="coinCheckbox" type="checkbox" value="iota%2C%20"></input>
-                <label>IOTA</label>
+                <label>
+                    IOTA
+                    <img className="coin-list-img" src="https://assets.coingecko.com/coins/images/692/large/IOTA_Swirl.png?1604238557" />
+                </label>
             </div>
             <div>
                 <input class="coinCheckbox" type="checkbox" value="ripple%2C%20"></input>
-                <label>XRP</label>
+                <label>
+                    XRP
+                    <img className="coin-list-img" src="https://assets.coingecko.com/coins/images/44/large/xrp-symbol-white-128.png?1605778731" />
+                </label>
             </div>
             <div>
                 <input class="coinCheckbox" type="checkbox" value="polkadot%2C%20"></input>
-                <label>Polkadot</label>
+                <label>
+                    Polkadot
+                    <img className="coin-list-img" src="https://assets.coingecko.com/coins/images/12171/large/polkadot.png?1639712644" />
+                </label>
             </div>
             <div>
                 <input class="coinCheckbox" type="checkbox" value="dogecoin%2C%20"></input>
-                <label>Dogecoin</label>
+                <label>
+                    Dogecoin
+                    <img className="coin-list-img" src="https://assets.coingecko.com/coins/images/5/large/dogecoin.png?1547792256" />
+                </label>
             </div>
             <div>
                 <input class="coinCheckbox" type="checkbox" value="avalanche-2%2C%20"></input>
-                <label>Avalanche</label>
+                <label>
+                    Avalanche
+                    <img className="coin-list-img" src="https://assets.coingecko.com/coins/images/12559/large/coin-round-red.png?1604021818" />
+                </label>
             </div>
             <div>
                 <input class="coinCheckbox" type="checkbox" value="shiba-inu%2C%20"></input>
-                <label>Shiba Inu</label>
+                <label>
+                    Shiba Inu
+                    <img className="coin-list-img" src="https://assets.coingecko.com/coins/images/11939/large/shiba.png?1622619446" />
+                </label>
             </div>
             <div>
                 <input class="coinCheckbox" type="checkbox" value="cosmos%2C%20"></input>
-                <label>Cosmos</label>
+                <label>
+                    Cosmos
+                    <img className="coin-list-img" src="https://assets.coingecko.com/coins/images/1481/large/cosmos_hub.png?1555657960" />
+                </label>
             </div>
             <div>
                 <input class="coinCheckbox" type="checkbox" value="litecoin%2C%20"></input>
-                <label>Litecoin</label>
+                <label>
+                    Litecoin
+                    <img className="coin-list-img" src="https://assets.coingecko.com/coins/images/2/large/litecoin.png?1547033580" />
+                </label>
             </div>
             <div>
                 <input class="coinCheckbox" type="checkbox" value="chainlink%2C%20"></input>
-                <label>Chainlink</label>
+                <label>
+                    Chainlink
+                    <img className="coin-list-img" src="https://assets.coingecko.com/coins/images/877/large/chainlink-new-logo.png?1547034700" />
+                </label>
             </div>
             <div>
                 <input class="coinCheckbox" type="checkbox" value="uniswap%2C%20"></input>
-                <label>Uniswap</label>
+                <label>
+                    Uniswap
+                    <img className="coin-list-img" src="https://assets.coingecko.com/coins/images/12504/large/uniswap-uni.png?1600306604" />
+                </label>
             </div>
             <div>
                 <input class="coinCheckbox" type="checkbox" value="tron%2C%20"></input>
-                <label>Tron</label>
+                <label>
+                    Tron
+                    <img className="coin-list-img" src="https://assets.coingecko.com/coins/images/1094/large/tron-logo.png?1547035066" />
+                </label>
             </div>
             <div>
                 <input class="coinCheckbox" type="checkbox" value="algorand%2C%20"></input>
-                <label>Algorand</label>
+                <label>
+                    Algorand
+                    <img className="coin-list-img" src="https://assets.coingecko.com/coins/images/4380/large/download.png?1547039725" />
+                </label>
             </div>
             <div>
                 <input class="coinCheckbox" type="checkbox" value="stellar%2C%20"></input>
-                <label>Stellar</label>
+                <label>
+                    Stellar
+                    <img className="coin-list-img" src="https://assets.coingecko.com/coins/images/100/large/Stellar_symbol_black_RGB.png?1552356157" />
+                </label>
             </div>
             <div>
                 <input class="coinCheckbox" type="checkbox" value="hedera-hashgraph%2C%20"></input>
-                <label>Hedera</label>
+                <label>
+                    Hedera
+                    <img className="coin-list-img" src="https://assets.coingecko.com/coins/images/3688/large/hbar.png?1637045634" />
+                </label>
             </div>
             <div>
                 <input class="coinCheckbox" type="checkbox" value="vechain%2C%20"></input>
-                <label>VeChain</label>
+                <label>
+                    VeChain
+                    <img className="coin-list-img" src="https://assets.coingecko.com/coins/images/1167/large/VeChain-Logo-768x725.png?1547035194" />
+                </label>
             </div>
             <div>
                 <input class="coinCheckbox" type="checkbox" value="elrond-erd-2%2C%20"></input>
-                <label>Elrond</label>
+                <label>
+                    Elrond
+                    <img className="coin-list-img" src="https://assets.coingecko.com/coins/images/12335/large/elrond3_360.png?1626341589" />
+                </label>
             </div>
             <div>
                 <input class="coinCheckbox" type="checkbox" value="monero%2C%20"></input>
-                <label>Monero</label>
+                <label>
+                    Monero
+                    <img className="coin-list-img" src="https://assets.coingecko.com/coins/images/69/large/monero_logo.png?1547033729" />
+                </label>
             </div>
             <div>
                 <input class="coinCheckbox" type="checkbox" value="loopring%2C%20"></input>
-                <label>Loopring</label>
+                <label>
+                    Loopring
+                    <img className="coin-list-img" src="https://assets.coingecko.com/coins/images/913/large/LRC.png?1572852344" />
+                </label>
             </div>
             <div>
                 <input class="coinCheckbox" type="checkbox" value="nano%2C%20"></input>
-                <label>Nano</label>
+                <label>
+                    Nano
+                    <img className="coin-list-img" src="https://assets.coingecko.com/coins/images/756/large/nano.png?1637232468" />
+                </label>
             </div>
             <div>
                 <button type="submit" onClick={CryptoData}>
