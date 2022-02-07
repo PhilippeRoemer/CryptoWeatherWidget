@@ -17,7 +17,8 @@ p,
 a,
 td,
 th,
-div {
+div,
+button {
     font-family: "Titillium Web", sans-serif;
 }
 
@@ -136,12 +137,58 @@ tr:nth-child(even) {
 .coin-list-img {
     height: 30px;
     width: 30px;
+    margin-left: 5px;
 }
 
 .coin-img {
     height: 30px;
     width: 30px;
     padding-left: 20px;
+}
+
+.cryptoList {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.cryptoCheckbox {
+    display: flex;
+    align-items: center;
+    margin: 5px;
+}
+
+:checked + label {
+    border-radius: 50px;
+    background-color: #ccc;
+    color: #222;
+}
+
+.checkbox {
+    display: none;
+}
+
+.cryptoLabel {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background-color: #313131;
+    border-radius: 50px;
+
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.cryptoSubmit {
+    padding: 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    margin-top: 35px;
 }
 
 .red {
