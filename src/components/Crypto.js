@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import axios from "axios";
 import { Sparklines, SparklinesLine } from "react-sparklines";
 import SettingsIcon from "../SettingsIcon.png";
@@ -9,7 +9,6 @@ const Crypto = () => {
     const CryptoData = () => {
         var txt = "";
         var checkboxes = document.querySelectorAll('input[type="checkbox"]:checked');
-        /*    const coinsContainer = document.getElementsByClassName(cryptoListContainer); */
 
         for (var checkbox of checkboxes) {
             txt = txt + checkbox.value;
@@ -194,9 +193,6 @@ const Crypto = () => {
             </div>
             {coins.length > 0 ? (
                 <div>
-                    {/*       <button >
-                        <img src={SettingsIcon} className="cogIcon"></img>Select Coins
-                    </button> */}
                     <div onClick={showCoins} className="selectCoinsDiv">
                         <img src={SettingsIcon} className="cogIcon"></img>
                         <h4>Select Coins</h4>
