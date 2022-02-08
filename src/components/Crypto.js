@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Sparklines, SparklinesLine } from "react-sparklines";
+import SettingsIcon from "../SettingsIcon.png";
 
 const Crypto = () => {
     const [coins, setCoins] = useState([]);
@@ -21,7 +22,6 @@ const Crypto = () => {
                 .get("https://api.coingecko.com/api/v3/coins/markets?vs_currency=USD&ids=" + selectedCoins + "order=market_cap_desc&per_page=50&page=1&sparkline=true&price_change_percentage=1h%2C24h%2C7d")
                 .then((res) => {
                     setCoins(res.data);
-
                     document.getElementById("coinContainer").style.display = "none";
                 })
                 .catch((errors) => console.log(errors));
@@ -194,7 +194,13 @@ const Crypto = () => {
             </div>
             {coins.length > 0 ? (
                 <div>
-                    <button onClick={showCoins}>Select Coins</button>
+                    {/*       <button >
+                        <img src={SettingsIcon} className="cogIcon"></img>Select Coins
+                    </button> */}
+                    <div onClick={showCoins} className="selectCoinsDiv">
+                        <img src={SettingsIcon} className="cogIcon"></img>
+                        <h4>Select Coins</h4>
+                    </div>
                     <table>
                         <tr>
                             <th></th>

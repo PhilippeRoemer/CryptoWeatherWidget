@@ -107,7 +107,7 @@ const Weather = () => {
     return (
         <div>
             <div className={location === null ? "zipCodeContainer" : "hideDiv"}>
-                <h2>Local Forecast</h2>
+                <h2>Display Local Forecast</h2>
                 <br />
                 <input type="text" size="15" maxLength="5" id="zipcode" placeholder="Enter ZIP Code" className="zipInput"></input>
                 <button onClick={() => setIsRunning(true)} className="zipSubmit">
