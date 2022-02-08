@@ -85,6 +85,7 @@ body {
     padding: 20px;
     font-size: 1rem;
     font-weight: bold;
+    cursor: pointer;
 }
 
 .location {
@@ -175,6 +176,7 @@ tr:nth-child(even) {
     padding: 10px;
     background-color: #313131;
     border-radius: 50px;
+    cursor: pointer;
 
     -webkit-touch-callout: none;
     -webkit-user-select: none;
@@ -184,11 +186,16 @@ tr:nth-child(even) {
     user-select: none;
 }
 
+.cryptoLabel:hover {
+    background-color: #555;
+}
+
 .cryptoSubmit {
     padding: 20px;
     font-size: 1rem;
     font-weight: bold;
     margin-top: 35px;
+    cursor: pointer;
 }
 
 .red {
