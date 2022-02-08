@@ -221,7 +221,7 @@ tr:nth-child(even) {
 }
 
 .loadingRing {
-    display: block;
+    display: none;
     margin-left: auto;
     margin-right: auto;
     width: 80px;
