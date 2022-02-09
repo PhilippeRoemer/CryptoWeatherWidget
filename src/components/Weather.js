@@ -41,51 +41,55 @@ const Weather = () => {
     const CurrentWeather = () => {
         const zip = document.getElementById("zipcode").value;
 
-        axios
-            .get("https://api.weatherapi.com/v1/forecast.json?key=04bfe3901ff14893882233129221801&q=" + zip + "&days=7")
-            .then((res) => {
-                /* Current Weather */
-                setLocation(res.data.location.name);
-                setRegion(res.data.location.region);
-                setCurrentTemp(Math.trunc(res.data.current.temp_f));
-                setCurrentCondition(res.data.current.condition.text);
-                setCurrentConditionIcon(res.data.current.condition.icon);
+        if (zip.length == 5) {
+            axios
+                .get("https://api.weatherapi.com/v1/forecast.json?key=04bfe3901ff14893882233129221801&q=" + zip + "&days=7")
+                .then((res) => {
+                    /* Current Weather */
+                    setLocation(res.data.location.name);
+                    setRegion(res.data.location.region);
+                    setCurrentTemp(Math.trunc(res.data.current.temp_f));
+                    setCurrentCondition(res.data.current.condition.text);
+                    setCurrentConditionIcon(res.data.current.condition.icon);
 
-                /* Today's Weather */
-                setDay0ConditionIcon(res.data.forecast.forecastday[0].day.condition.icon);
-                setDay0High(Math.trunc(res.data.forecast.forecastday[0].day.maxtemp_f));
-                setDay0Low(Math.trunc(res.data.forecast.forecastday[0].day.mintemp_f));
-                setDay0Rain(res.data.forecast.forecastday[0].day.daily_chance_of_rain);
+                    /* Today's Weather */
+                    setDay0ConditionIcon(res.data.forecast.forecastday[0].day.condition.icon);
+                    setDay0High(Math.trunc(res.data.forecast.forecastday[0].day.maxtemp_f));
+                    setDay0Low(Math.trunc(res.data.forecast.forecastday[0].day.mintemp_f));
+                    setDay0Rain(res.data.forecast.forecastday[0].day.daily_chance_of_rain);
 
-                /* Tomorrow's Weather */
-                const day1 = new Date();
-                day1.setDate(day1.getDate() + 1);
-                setDay1(day1.toLocaleString("default", { weekday: "short" }));
-                setDay1ConditionIcon(res.data.forecast.forecastday[1].day.condition.icon);
-                setDay1High(Math.trunc(res.data.forecast.forecastday[1].day.maxtemp_f));
-                setDay1Low(Math.trunc(res.data.forecast.forecastday[1].day.mintemp_f));
-                setDay1Rain(res.data.forecast.forecastday[1].day.daily_chance_of_rain);
+                    /* Tomorrow's Weather */
+                    const day1 = new Date();
+                    day1.setDate(day1.getDate() + 1);
+                    setDay1(day1.toLocaleString("default", { weekday: "short" }));
+                    setDay1ConditionIcon(res.data.forecast.forecastday[1].day.condition.icon);
+                    setDay1High(Math.trunc(res.data.forecast.forecastday[1].day.maxtemp_f));
+                    setDay1Low(Math.trunc(res.data.forecast.forecastday[1].day.mintemp_f));
+                    setDay1Rain(res.data.forecast.forecastday[1].day.daily_chance_of_rain);
 
-                /* After Tomorrow's Weather */
-                const day2 = new Date();
-                day2.setDate(day2.getDate() + 2);
-                setDay2(day2.toLocaleString("default", { weekday: "short" }));
-                setDay2ConditionIcon(res.data.forecast.forecastday[2].day.condition.icon);
-                setDay2High(Math.trunc(res.data.forecast.forecastday[2].day.maxtemp_f));
-                setDay2Low(Math.trunc(res.data.forecast.forecastday[2].day.mintemp_f));
-                setDay2Rain(res.data.forecast.forecastday[2].day.daily_chance_of_rain);
+                    /* After Tomorrow's Weather */
+                    const day2 = new Date();
+                    day2.setDate(day2.getDate() + 2);
+                    setDay2(day2.toLocaleString("default", { weekday: "short" }));
+                    setDay2ConditionIcon(res.data.forecast.forecastday[2].day.condition.icon);
+                    setDay2High(Math.trunc(res.data.forecast.forecastday[2].day.maxtemp_f));
+                    setDay2Low(Math.trunc(res.data.forecast.forecastday[2].day.mintemp_f));
+                    setDay2Rain(res.data.forecast.forecastday[2].day.daily_chance_of_rain);
 
-                /* Sunrise and Sunset */
-                setSunrise(res.data.forecast.forecastday[0].astro.sunrise);
-                setSunset(res.data.forecast.forecastday[0].astro.sunset);
+                    /* Sunrise and Sunset */
+                    setSunrise(res.data.forecast.forecastday[0].astro.sunrise);
+                    setSunset(res.data.forecast.forecastday[0].astro.sunset);
 
-                /* Updated */
-                const updateTime = new Date();
-                setForecastUpdate("Weather Updated at: " + updateTime.toLocaleTimeString("en-US", { hour: "numeric", minute: "numeric", hour12: true }));
-            })
-            .catch((errors) => {
-                console.error(errors);
-            });
+                    /* Updated */
+                    const updateTime = new Date();
+                    setForecastUpdate("Weather Updated at: " + updateTime.toLocaleTimeString("en-US", { hour: "numeric", minute: "numeric", hour12: true }));
+                })
+                .catch((errors) => {
+                    console.error(errors);
+                });
+        } else {
+            alert("No");
+        }
     };
     const newHandleSearch = () => {
         setNewSearch(true);
