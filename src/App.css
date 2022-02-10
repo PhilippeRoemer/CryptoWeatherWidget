@@ -198,6 +198,11 @@ tr:nth-child(even) {
     cursor: pointer;
 }
 
+.coinUpdate {
+    font-size: 0.8rem;
+    margin: 10px;
+}
+
 .red {
     color: #ea3943;
 }

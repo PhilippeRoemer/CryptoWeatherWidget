@@ -6,6 +6,7 @@ import SettingsIcon from "../SettingsIcon.png";
 const Crypto = () => {
     const [coins, setCoins] = useState([]);
     const [coinSearch, setCoinSearch] = useState(false);
+    const [coinUpdate, setCoinUpdate] = useState([]);
 
     const CryptoData = () => {
         var txt = "";
@@ -37,7 +38,8 @@ const Crypto = () => {
             const interval = setInterval(() => {
                 CryptoData();
                 const updateTime = new Date();
-                console.log("Crypto data updated at: " + updateTime.toLocaleTimeString());
+                /* console.log("Crypto data updated at: " + updateTime.toLocaleTimeString()); */
+                setCoinUpdate("Crypto data updated at: " + updateTime.toLocaleTimeString("en-US", { hour: "numeric", minute: "numeric", hour12: true }));
             }, 10000);
             return () => clearInterval(interval);
         }
@@ -211,7 +213,6 @@ const Crypto = () => {
                         <img src={SettingsIcon} className="cogIcon"></img>
                         <h4>Select Coins</h4>
                     </div>
-                    <p>Crypto Updated at: </p>
                     <table>
                         <tr>
                             <th></th>
@@ -288,6 +289,7 @@ const Crypto = () => {
                             );
                         })}
                     </table>
+                    <p className="coinUpdate">{coinUpdate}</p>
                 </div>
             ) : (
                 <div class="loadingRing" id="loading"></div>
