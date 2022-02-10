@@ -31,10 +31,6 @@ const Crypto = () => {
         }
     };
 
-    const func = () => {
-        console.log("Function");
-    };
-
     /* Pulls crypto data on load and updates every 10 seconds */
     useEffect(() => {
         if (coinSearch === true) {
@@ -215,6 +211,7 @@ const Crypto = () => {
                         <img src={SettingsIcon} className="cogIcon"></img>
                         <h4>Select Coins</h4>
                     </div>
+                    <p>Crypto Updated at: </p>
                     <table>
                         <tr>
                             <th></th>
