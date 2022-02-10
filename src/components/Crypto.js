@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Sparklines, SparklinesLine } from "react-sparklines";
 import SettingsIcon from "../SettingsIcon.png";
 
 const Crypto = () => {
     const [coins, setCoins] = useState([]);
+    const [coinSearch, setCoinSearch] = useState(false);
 
     const CryptoData = () => {
         var txt = "";
@@ -21,6 +22,7 @@ const Crypto = () => {
                 .get("https://api.coingecko.com/api/v3/coins/markets?vs_currency=USD&ids=" + selectedCoins + "order=market_cap_desc&per_page=50&page=1&sparkline=true&price_change_percentage=1h%2C24h%2C7d")
                 .then((res) => {
                     setCoins(res.data);
+                    setCoinSearch(true);
                     document.getElementById("coinContainer").style.display = "none";
                 })
                 .catch((errors) => console.log(errors));
@@ -28,6 +30,22 @@ const Crypto = () => {
             alert("Please select at least one cryptocurrency.");
         }
     };
+
+    const func = () => {
+        console.log("Function");
+    };
+
+    /* Pulls crypto data on load and updates every 10 seconds */
+    useEffect(() => {
+        if (coinSearch === true) {
+            const interval = setInterval(() => {
+                CryptoData();
+                const updateTime = new Date();
+                console.log("Crypto data updated at: " + updateTime.toLocaleTimeString());
+            }, 10000);
+            return () => clearInterval(interval);
+        }
+    }, [coinSearch]);
 
     const showCoins = () => {
         document.getElementById("coinContainer").style.display = "block";
