@@ -37,6 +37,23 @@ body {
     text-align: center;
 }
 
+.spaceContainer {
+    margin-bottom: 1.2rem;
+}
+
+.rocketContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.rocketIcon {
+    width: 25px;
+}
+
+.spaceText {
+    font-size: 0.8rem;
+}
 .zipCodeContainer {
     text-align: center;
     padding: 20px;
