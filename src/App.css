@@ -20,7 +20,6 @@ th,
 div,
 button {
     font-family: "Titillium Web", sans-serif;
-
     -webkit-touch-callout: none;
     -webkit-user-select: none;
     -khtml-user-select: none;
@@ -36,6 +35,14 @@ body {
     margin: auto;
 }
 
+a:link {
+    color: #c5c6c7;
+}
+
+a:visited {
+    color: #c5c6c7;
+}
+
 .headerContainer {
     display: flex;
     align-items: flex-end;
@@ -46,6 +53,7 @@ body {
 
 .spaceContainer {
     margin-bottom: 1.2rem;
+    position: relative;
 }
 
 .rocketContainer {
@@ -56,6 +64,37 @@ body {
 
 .rocketIcon {
     width: 25px;
+}
+
+.spaceContainer .tooltiptext {
+    visibility: hidden;
+    width: 500px;
+    background-color: rgb(78, 78, 78);
+    color: #c5c6c7;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    top: -5px;
+    right: 110%;
+    border-style: solid;
+    border-color: #c5c6c7;
+    border-width: 2px;
+}
+
+.spaceContainer .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 5%;
+    left: 100%;
+    margin-top: -5px;
+    border-width: 10px;
+    border-style: solid;
+    border-color: transparent transparent transparent rgb(219, 219, 219);
+}
+.spaceContainer:hover .tooltiptext {
+    visibility: visible;
 }
 
 .spaceText {

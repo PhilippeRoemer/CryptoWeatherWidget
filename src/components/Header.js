@@ -6,6 +6,7 @@ const Header = () => {
     const [currentTime, setCurrentTime] = useState([]);
     const [currentDate, setCurrentDate] = useState([]);
     const [currentAstronauts, setCurrentAstronauts] = useState([]);
+    const [astronautInfo, setAstronautInfo] = useState([]);
 
     const Time = () => {
         const time = new Date();
@@ -33,6 +34,8 @@ const Header = () => {
             .then((res) => {
                 console.log(res.data.number);
                 setCurrentAstronauts(res.data.number);
+                setAstronautInfo(res.data.people);
+                console.log(res.data);
             })
             .catch((error) => console.log(error));
     }, []);
@@ -47,12 +50,29 @@ const Header = () => {
                 <h3 className="date">{currentDate}</h3>
             </div>
 
-            <div className="spaceContainer">
+            <div className="spaceContainer ">
                 <div className="rocketContainer">
                     <h3>{currentAstronauts}</h3>
                     <img src={SpaceRocket} className="rocketIcon" />
                 </div>
-                <p className="spaceText">People in Space</p>
+                <p className="spaceText">People in space</p>
+                <div className="tooltiptext">
+                    {astronautInfo.map((post) => {
+                        const craft = post.craft;
+                        const craftSearch = "http://www.google.com/search?q=" + post.craft;
+                        const name = post.name;
+                        return (
+                            <div>
+                                <p>
+                                    <a href={craftSearch} target="_blank">
+                                        {craft}
+                                    </a>
+                                    : {name}
+                                </p>
+                            </div>
+                        );
+                    })}
+                </div>
             </div>
         </div>
     );
