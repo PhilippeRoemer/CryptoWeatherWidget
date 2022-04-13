@@ -20,7 +20,7 @@ const Header = () => {
 
     const AustronautData = () => {
         axios
-            .get("http://api.open-notify.org/astros.json")
+            .get("https://www.howmanypeopleareinspacerightnow.com/peopleinspace.json")
             .then((res) => {
                 setCurrentAstronauts(res.data.number);
                 setAstronautInfo(res.data.people);
@@ -66,7 +66,7 @@ const Header = () => {
                 <p className="spaceText">People in space</p>
                 <div className="tooltiptext">
                     {astronautInfo.map((post) => {
-                        const craft = post.craft;
+                        const craft = post.location;
                         const craftSearch = "http://www.google.com/search?q=" + post.craft;
                         const name = post.name;
                         return (
