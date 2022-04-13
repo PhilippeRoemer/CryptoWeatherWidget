@@ -18,6 +18,17 @@ const Header = () => {
         setCurrentDate(date.toLocaleString("en-US", { month: "long", day: "2-digit", year: "numeric" }));
     };
 
+    const AustronautData = () => {
+        axios
+            .get("http://api.open-notify.org/astros.json")
+            .then((res) => {
+                setCurrentAstronauts(res.data.number);
+                setAstronautInfo(res.data.people);
+            })
+            .catch((error) => console.log(error));
+    };
+
+    /* Date and time refreshed every 1 second */
     useEffect(() => {
         Time();
         CalendarDate();
@@ -28,16 +39,13 @@ const Header = () => {
         return () => clearInterval(interval);
     }, []);
 
+    /* Austronaut data is refreshed every 30 minutes*/
     useEffect(() => {
-        axios
-            .get("http://api.open-notify.org/astros.json")
-            .then((res) => {
-                console.log(res.data.number);
-                setCurrentAstronauts(res.data.number);
-                setAstronautInfo(res.data.people);
-                console.log(res.data);
-            })
-            .catch((error) => console.log(error));
+        AustronautData();
+        const interval = setInterval(() => {
+            AustronautData();
+        }, 1800000);
+        return () => clearInterval(interval);
     }, []);
 
     return (
