@@ -1,16 +1,24 @@
 {
   "files": {
-    "main.css": "/CryptoWeatherWidget/static/css/main.1ef6c2c6.css",
-    "main.js": "/CryptoWeatherWidget/static/js/main.bed7ff2e.js",
+    "main.css": "/CryptoWeatherWidget/static/css/main.2ebf0c6d.css",
+    "main.js": "/CryptoWeatherWidget/static/js/main.3a4dd29c.js",
     "static/media/SettingsIcon.png": "/CryptoWeatherWidget/static/media/SettingsIcon.1739cadf411fd17f078b.png",
     "static/media/RainIcon.png": "/CryptoWeatherWidget/static/media/RainIcon.610a2b1505a2a7ff5119.png",
     "static/media/Rocket.png": "/CryptoWeatherWidget/static/media/Rocket.6d42cbb91cf3696c4b9b.png",
+    "static/media/WaxingGibbous.png": "/CryptoWeatherWidget/static/media/WaxingGibbous.b9aa8777bcf47cf42dc9.png",
+    "static/media/WaningGibbous.png": "/CryptoWeatherWidget/static/media/WaningGibbous.88cf7e50823d8915da2e.png",
+    "static/media/WaxingCrescent.png": "/CryptoWeatherWidget/static/media/WaxingCrescent.a2aadab22a6ee3b89945.png",
+    "static/media/WaningCrescent.png": "/CryptoWeatherWidget/static/media/WaningCrescent.19cab3e5b612b1f73a51.png",
+    "static/media/FirstQuarter.png": "/CryptoWeatherWidget/static/media/FirstQuarter.e7671e54ec49ff8ee19b.png",
+    "static/media/LastQuarter.png": "/CryptoWeatherWidget/static/media/LastQuarter.26f900f498e81b4d719e.png",
+    "static/media/NewMoon.png": "/CryptoWeatherWidget/static/media/NewMoon.bf84fb89aa86ff605132.png",
+    "static/media/FullMoon.png": "/CryptoWeatherWidget/static/media/FullMoon.13082e8eeb8007635a41.png",
     "index.html": "/CryptoWeatherWidget/index.html",
-    "main.1ef6c2c6.css.map": "/CryptoWeatherWidget/static/css/main.1ef6c2c6.css.map",
-    "main.bed7ff2e.js.map": "/CryptoWeatherWidget/static/js/main.bed7ff2e.js.map"
+    "main.2ebf0c6d.css.map": "/CryptoWeatherWidget/static/css/main.2ebf0c6d.css.map",
+    "main.3a4dd29c.js.map": "/CryptoWeatherWidget/static/js/main.3a4dd29c.js.map"
   },
   "entrypoints": [
-    "static/css/main.1ef6c2c6.css",
-    "static/js/main.bed7ff2e.js"
+    "static/css/main.2ebf0c6d.css",
+    "static/js/main.3a4dd29c.js"
   ]
 }
