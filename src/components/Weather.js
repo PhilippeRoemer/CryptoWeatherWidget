@@ -1,5 +1,13 @@
 import React, { useState, useEffect } from "react";
 import RainIcon from "../RainIcon.png";
+import NewMoon from "../NewMoon.png";
+import WaxingCrescent from "../WaxingCrescent.png";
+import FirstQuarter from "../FirstQuarter.png";
+import WaxingGibbous from "../WaxingGibbous.png";
+import FullMoon from "../FullMoon.png";
+import WaningGibbous from "../WaningGibbous.png";
+import LastQuarter from "../LastQuarter.png";
+import WaningCrescent from "../WaningCrescent.png";
 import axios from "axios";
 
 const Weather = () => {
@@ -37,6 +45,9 @@ const Weather = () => {
     /* Sunrise and Sunset */
     const [sunrise, setSunrise] = useState([]);
     const [sunset, setSunset] = useState([]);
+
+    /* Moon Phase */
+    const [moonPhase, setMoonPhase] = useState([]);
 
     const CurrentWeather = () => {
         const zip = document.getElementById("zipcode").value;
@@ -80,6 +91,9 @@ const Weather = () => {
                     setSunrise(res.data.forecast.forecastday[0].astro.sunrise);
                     setSunset(res.data.forecast.forecastday[0].astro.sunset);
 
+                    /* Moon Phase */
+                    setMoonPhase(res.data.forecast.forecastday[0].astro.moon_phase);
+
                     /* Updated */
                     const updateTime = new Date();
                     setForecastUpdate("Weather Updated at: " + updateTime.toLocaleTimeString("en-US", { hour: "numeric", minute: "numeric", hour12: true }));
@@ -107,6 +121,34 @@ const Weather = () => {
             return () => clearInterval(interval);
         }
     }, [isRunning, newSearch]);
+
+    /* Moon Phase Images */
+    switch (moonPhase) {
+        case "New Moon":
+            document.getElementById("moonPhaseID").src = NewMoon;
+            break;
+        case "Waxing Crescent":
+            document.getElementById("moonPhaseID").src = WaxingCrescent;
+            break;
+        case "First Quarter":
+            document.getElementById("moonPhaseID").src = FirstQuarter;
+            break;
+        case "Waxing Gibbous":
+            document.getElementById("moonPhaseID").src = WaxingGibbous;
+            break;
+        case "Full Moon":
+            document.getElementById("moonPhaseID").src = FullMoon;
+            break;
+        case "Waning Gibbous":
+            document.getElementById("moonPhaseID").src = WaningGibbous;
+            break;
+        case "Last Quarter":
+            document.getElementById("moonPhaseID").src = LastQuarter;
+            break;
+        case "Waning Crescent":
+            document.getElementById("moonPhaseID").src = WaningCrescent;
+            break;
+    }
 
     return (
         <div>
@@ -182,6 +224,9 @@ const Weather = () => {
                         <p>{sunset}</p>
                         <br />
                         <p className="weatherUpdate">{forecastUpdate}</p>
+                    </div>
+                    <div className="moonContainer">
+                        <img id="moonPhaseID" className="moonImage" />
                     </div>
                 </div>
             </div>
