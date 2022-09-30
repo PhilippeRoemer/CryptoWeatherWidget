@@ -173,10 +173,10 @@ const Crypto = () => {
                         </label>
                     </div>
                     <div className="cryptoCheckbox">
-                        <input type="checkbox" className="checkbox" id="elrond" value="elrond-erd-2%2C%20"></input>
-                        <label htmlFor="elrond" className="cryptoLabel">
-                            Elrond
-                            <img className="coin-list-img" src="https://assets.coingecko.com/coins/images/12335/large/elrond3_360.png?1626341589" />
+                        <input type="checkbox" className="checkbox" id="shimmer" value="shimmer%2C%20"></input>
+                        <label htmlFor="shimmer" className="cryptoLabel">
+                            Shimmer
+                            <img className="coin-list-img" src="https://assets.coingecko.com/coins/images/27286/large/shimmer_mark_transparent_200x200.png?1663141514" />
                         </label>
                     </div>
                     <div className="cryptoCheckbox">
